@@ -11,3 +11,130 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.todo-item:not(:last-child) {
+  border-radius: 0;
+  border-bottom: 1px solid rgba(53, 55, 59, 0.2);
+}
+
+.todo-item h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.todo-item p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.todo-item button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo-item button:hover {
+  background-color: #cc0000;
+}
+
+.add-todo {
+  margin-bottom: 20px;
+}
+
+.add-todo form {
+  display: flex;
+  align-items: center;
+}
+
+.add-todo input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+.add-todo button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.add-todo button:hover {
+  background-color: #0056b3;
+}
+
+.add-todo button:focus {
+  outline: none;
+}
+
+.radio-button-group {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.radio-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.radio-button:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.radio-button:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.radio-button:not(:last-child) {
+  border-right: none;
+}
+
+.radio-button.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.radio-button:hover {
+  background-color: #f0f0f0;
+}
+
+.radio-button:focus {
+  outline: none;
+}
+
