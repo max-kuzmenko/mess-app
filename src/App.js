@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AddTodo from './AddTodo';
 import TodoItem from './TodoItem';
 import RadioButtonGroup from './RadioButtonGroup';
+import {getTodos} from "./api";
 
 const trackFirstClicks = (clicksAmount) => {
   console.log('User clicks in first 10 seconds: ', clicksAmount);
@@ -16,9 +17,9 @@ function App() {
   const filter = { type };
 
   useEffect(() => {
-    fetch(`https://65b8c458b71048505a896622.mockapi.io/api/v1/todos`)
-      .then(response => response.json())
-      .then(data => setTodos(data.map(todo => ({ ...todo, type: 'fetched' }))));
+    const request = getTodos(filter);
+    request.then(response => response.json());
+    request.then(data => setTodos(data.map(todo => ({ ...todo, type: 'fetched' }))));
   }, [filter]);
 
   useEffect(() => {
