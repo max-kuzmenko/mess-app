@@ -2,15 +2,12 @@ import React, { useState, useEffect } from 'react';
 import AddTodo from './AddTodo';
 import TodoItem from './TodoItem';
 import RadioButtonGroup from './RadioButtonGroup';
-import {getTodos} from "./api";
-
-const trackFirstClicks = (clicksAmount) => {
-  console.log('User clicks in first 10 seconds: ', clicksAmount);
-}
+import { getTodos } from "./api";
+import { trackFirstClicks } from "./tracking";
 
 function App() {
   const [todos, setTodos] = useState([]);
-  const [type, setType] = useState('all');
+  const [type, setType] = useState('fetched');
 
   let userClicks = 0;
 
@@ -30,7 +27,7 @@ function App() {
 
   const handleAddTodo = (name) => {
     userClicks += 1;
-    const newTodo = { id: todos.length + 1, name: name };
+    const newTodo = { id: todos.length + 1, name: name, type: 'my' };
     todos.unshift(newTodo);
     setTodos(todos);
   };
@@ -45,7 +42,7 @@ function App() {
     <main className="page">
       <h1>Todo App</h1>
       <RadioButtonGroup
-        options={['all', 'my']}
+        options={['fetched', 'my']}
         onSelect={(opt) => setType(opt)}
       />
       <AddTodo onAdd={handleAddTodo} />
